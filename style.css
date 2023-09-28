@@ -1,0 +1,199 @@
+/* Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,400;6..12,500;6..12,700&display=swap");
+
+/* CSS Reset */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Nunito Sans", sans-serif;
+  background-color: hsl(185, 22%, 80%);
+  color: hsl(240, 4%, 95%);
+}
+
+h1 {
+  color: hsl(167, 13%, 26%);
+  margin-top: 0;
+  margin-bottom: 0.75em;
+  text-align: center;
+}
+.container {
+  background-color: hsl(188, 39%, 39%);
+  padding: 1em 1.23em;
+  border-radius: 1.024em;
+  width: 400px;
+  height: 90px;
+  position: relative;
+  overflow: hidden;
+  transition: 0.5s ease-out;
+  box-shadow: 0 0 18px rgba(50, 99, 78, 0.7);
+}
+
+/* Searchbox */
+.searchbox {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5em;
+}
+.location {
+  position: absolute;
+  color: hsl(185, 22%, 80%);
+  font-size: 1.5rem;
+}
+.searchbox input[type="text"] {
+  border: none;
+  padding: 0.7em 0;
+  width: 80%;
+  padding-left: 2em;
+  font-size: 1.2rem;
+  background-color: transparent;
+  color: hsl(240, 4%, 95%);
+  outline: none;
+}
+
+input[type="text"]::placeholder {
+  font-size: 1.1rem;
+  text-transform: capitalize;
+  color: hsl(240, 4%, 95%);
+  font-weight: 600;
+}
+
+.searchbox button {
+  cursor: pointer;
+  border: 0;
+  width: 35px;
+  height: 35px;
+  font-size: 1.23rem;
+  border-radius: 50%;
+  transition: 0.3s ease;
+}
+
+.searchbox button:hover {
+  background-color: hsl(188, 62%, 23%);
+  color: hsl(240, 4%, 95%);
+}
+
+/* Error Image */
+.error {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  opacity: 0;
+}
+.error img {
+  width: 70%;
+  display: block;
+  margin: 1em auto;
+  object-fit: contain;
+}
+
+.error p {
+  margin: 0.5em 0;
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+
+/* Weather container */
+.weather-container {
+  position: relative;
+}
+.weather-container img {
+  width: 60%;
+  display: block;
+  margin: 1em auto;
+  position: inherit;
+  z-index: 2;
+}
+
+.weather-container .temperature {
+  position: absolute;
+  z-index: 1;
+  font-size: 4.2rem;
+  font-weight: 800;
+  color: #fff;
+  top: 0;
+  right: 100px;
+  text-align: center;
+  filter: blur(2px);
+}
+
+.weather-container .description {
+  text-align: center;
+  text-transform: capitalize;
+  font-weight: 600;
+  margin-bottom: 0.4em;
+}
+
+/* Weather details */
+.weather-details {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 1.45em;
+}
+
+.weather-details i {
+  font-size: 1.54rem;
+  font-weight: bold;
+}
+
+.weather-details span {
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+.humidity,
+.wind {
+  display: flex;
+  gap: 0.5em;
+  align-items: center;
+}
+
+.text {
+  font-size: 1.15rem;
+}
+
+.weather-container,
+.weather-details {
+  opacity: 0;
+  scale: 0;
+}
+
+/* Animation to fade */
+.fadeIn {
+  animation: 0.3s fade forwards;
+  animation-delay: 0.3s;
+}
+
+@keyframes fade {
+  to {
+    scale: 1;
+    opacity: 1;
+  }
+}
+
+/* Media Query */
+@media (max-width: 450px){
+    .container {
+        padding: .75em 1em;
+        width: 340px;
+        height: 80px;
+    }
+
+    h1{
+        font-size: 1.4rem;
+    }
+}
